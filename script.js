@@ -2,8 +2,8 @@
 // The computer will generate a selection from an array of options 
 const PLAY_OPTIONS = ['rock', 'scissor', 'paper']
 
-let computerSelection = computerPlay();
-let playerSelection = 'rock';
+let computerSelection;
+let playerSelection = 'scissor';
 
 function computerPlay(){
     return PLAY_OPTIONS[Math.floor(Math.random() * PLAY_OPTIONS.length)];
@@ -13,39 +13,45 @@ function computerPlay(){
     // Scissor > Paper
     // Paper > Rock 
 
-function playRound(){
-    console.log(playerSelection, computerSelection)
+function playRound(playerSelection, computerSelection, PLAY_OPTIONS){
     if (
         playerSelection === PLAY_OPTIONS[0] && computerSelection === PLAY_OPTIONS[1] ||
         playerSelection === PLAY_OPTIONS[1] && computerSelection === PLAY_OPTIONS[2] ||
         playerSelection === PLAY_OPTIONS[2] && computerSelection === PLAY_OPTIONS[0]
         ){
-            console.log('Player, You Win!');
+        return 'Player';
         }
-    else if  (
+    else if (
         computerSelection === PLAY_OPTIONS[0] && playerSelection === PLAY_OPTIONS[1] ||
         computerSelection === PLAY_OPTIONS[1] && playerSelection === PLAY_OPTIONS[2] ||
         computerSelection === PLAY_OPTIONS[2] && playerSelection === PLAY_OPTIONS[0]
-        )
-        {
-           console.log('Computer Wins, You Lose');
+        ){
+        return 'Computer';
         }
-
     else {
-        console.log(`It's a tie!`)
+        return 'Tie';
     }
 }   
+// 5 rounds will occur and the player w/the most wins is winner
 
+function playGame(){
+    let winner = []
+    let winnerRound;
+    
+    for(let i = 0; i < 5; i++){
+        // Winner will be noted and stored for each round
+    
+        let computerSelection = computerPlay();
+        console.log(computerSelection)
+        let winnerRound = playRound(playerSelection, computerSelection, PLAY_OPTIONS);
+        winner.push(winnerRound);
+        console.log(winner);
+    }
+}
 
-playRound()
+playGame();
 
-// 5 rounds will occur and the player will the most wins out of 5 will
-// be the winner
-
-// function playGame(){
-//     for(let i = 0; i < 5; i++){
-//         // Winner will be noted and stored for each round
-//         let winner = []
-//         playRound();
-//     }
-// }
+// play five rounds
+// for each round return winner 
+// take winner and store into array 
+// after 
