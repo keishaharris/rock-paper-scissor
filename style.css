@@ -1,0 +1,133 @@
+body {
+  background-color: #cae9ff;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  color: #1b4965;
+  font-size: 48px;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+h2 {
+  text-align: center;
+}
+
+.title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.reset{
+    background-color: #62B6CB;
+    color: #fff;
+    border: 5px solid #5fa8d3;
+    font-size: 18px;
+    padding: 15px 30px;
+    cursor: pointer;
+}
+
+.reset:hover{
+    font-size: 22px;
+}
+
+.options {
+  display: flex;
+  gap: 30px;
+  margin-top:30px;
+}
+
+.gamePieces {
+  border: 15px solid #5fa8d3;
+  border-radius: 50%;
+  padding: 30px;
+  cursor: pointer;
+}
+
+img {
+  width: auto;
+  height: auto;
+  transition: transform 0.2s;
+}
+
+img:hover {
+  transform: scale(1.25);
+}
+
+.scoreboard {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.winner .score {
+    text-align: center;
+    font-size: 25px;
+    color: #62B6CB;
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: fadeIn linear 3s;
+    -webkit-animation: fadeIn linear 3s;
+    -moz-animation: fadeIn linear 3s;
+    -o-animation: fadeIn linear 3s;
+    -ms-animation: fadeIn linear 3s;
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+.scores {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.competitor {
+  width: 100px;
+  height: 100px;
+  padding: 25px;
+  border: 5px solid #5fa8d3;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player,
+.computer {
+  color: #1b4965;
+  font-size: 48px;
+  font-weight: bold;
+}
